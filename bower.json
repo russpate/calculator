@@ -1,0 +1,17 @@
+{
+  "name": "calculator",
+  "homepage": "https://github.com/russpate/calculator",
+  "authors": [
+    "Russell Pate <russ@russpate.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

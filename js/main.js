@@ -1,21 +1,24 @@
-// $(document).ready(function(){
-//   calcApp.init();
-// });
-//
-// var calcString = "";
-// var calcApp = {
-//   init: function(){
-//     calcApp.events();
-//     calcApp.toPage();
-//   },
-//   events: function(){
-//     $('#calc-main').on('click', 'span', calcApp.numLog);
-//   },
-//
-//   toPage: function(arr){
-//     $('#calc-main').html(templates.calc);
-//   }
-// };
+$(document).ready(function(){
+  calcApp.init();
+});
+
+var number = "";
+var newnumber = "";
+var operator = "";
+var totaldiv = $("#total");
+
+var calcApp = {
+  init: function(){
+    calcApp.events();
+    calcApp.totalReset();
+  },
+  events: function(){
+    $('#calc-main').on('click', 'span', calcApp.numLog);
+  },
+  totalReset: function(){
+    totaldiv.text("0");
+  }
+};
 
 $(document).ready(function(){
   //prevents the length of numbers from going outside the div, might remove this.
@@ -28,11 +31,7 @@ $(document).ready(function(){
   //           }
   //       }
   //   };
-	var number = "";
-  var newnumber = "";
-  var operator = "";
-  var totaldiv = $("#total");
-  totaldiv.text("0");
+
 
   //click funciton for numbers
   $("#numbers > a").not("#clear,#clearall").click(function(){

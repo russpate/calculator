@@ -7,3 +7,21 @@ body{
   background:$c-light;
   font-family: $f-primary;
 }
+
+h3{
+  text-align: center;
+}
+
+h5{
+  text-align:center;
+  padding:2%;
+  a{
+    border:none;
+    text-decoration:underline;
+    color:lighten($c-secondary,50%);
+    &:hover{
+      background:none;
+      color:$c-secondary;
+    }
+  }
+}

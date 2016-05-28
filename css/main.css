@@ -58,3 +58,17 @@ a#clear, a#clearall {
 body {
   background: #FFF;
   font-family: "Source Code Pro", sans-serif; }
+
+h3 {
+  text-align: center; }
+
+h5 {
+  text-align: center;
+  padding: 2%; }
+  h5 a {
+    border: none;
+    text-decoration: underline;
+    color: gray; }
+    h5 a:hover {
+      background: none;
+      color: #000; }

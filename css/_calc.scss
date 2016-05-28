@@ -1,11 +1,17 @@
-h1{
+h3{
   text-align: center;
 }
 
 a{
   cursor:pointer;
-  border-left: 2px solid rgba(0,0,0,0.10);
-  border-bottom: 2px solid rgba(0,0,0,0.10);
+  border:1px solid lighten($c-secondary,80%);
+  transition:.2s all;
+  background:$c-primary;
+  color:$c-secondary;
+  &:hover{
+    background:$c-prim-hov;
+    color:$c-primary;
+  }
 }
 
 #calculator {
@@ -18,6 +24,8 @@ a{
   text-align: right;
   font-size: 5rem;
   padding: 2% 3%;
+  border:2px solid lighten($c-secondary,80%);
+  border-bottom:1px solid lighten($c-secondary,80%);
 }
 
 #operators a {
@@ -26,20 +34,28 @@ a{
   text-align: center;
   font-size: 3rem;
   padding:1%;
-  background:purple;
+  background:darken($c-primary,10%);
   &:hover{
-    background:darken(purple,10%);
+    background:$c-secondary;
+    color:$c-primary;
+  }
+}
+a#equals{
+  &:hover{
   }
 }
 
 #numbers a {
 	text-decoration: none;
-	color: black;
 	text-align: center;
 	font-size: 5rem;
 	padding: 1%;
-	background:blue;
   &:hover{
-    background:darken(blue,10%);
+  }
+}
+a#clear, a#clearall{
+  background:darken($c-primary,10%);
+  &:hover{
+    background:$c-secondary;
   }
 }

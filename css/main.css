@@ -1,16 +1,23 @@
-h1 {
+h3 {
   text-align: center; }
 
 a {
   cursor: pointer;
-  border-left: 2px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1); }
+  border: 1px solid #cccccc;
+  transition: .2s all;
+  background: #FFF;
+  color: #000; }
+  a:hover {
+    background: black;
+    color: #FFF; }
 
 #total {
   background-color: white;
   text-align: right;
   font-size: 5rem;
-  padding: 2% 3%; }
+  padding: 2% 3%;
+  border: 2px solid #cccccc;
+  border-bottom: 1px solid #cccccc; }
 
 #operators a {
   text-decoration: none;
@@ -18,19 +25,21 @@ a {
   text-align: center;
   font-size: 3rem;
   padding: 1%;
-  background: purple; }
+  background: #e6e6e6; }
   #operators a:hover {
-    background: #4d004d; }
+    background: #000;
+    color: #FFF; }
 
 #numbers a {
   text-decoration: none;
-  color: black;
   text-align: center;
   font-size: 5rem;
-  padding: 1%;
-  background: blue; }
-  #numbers a:hover {
-    background: #0000cc; }
+  padding: 1%; }
+
+a#clear, a#clearall {
+  background: #e6e6e6; }
+  a#clear:hover, a#clearall:hover {
+    background: #000; }
 
 * {
   margin: 0;
@@ -38,5 +47,5 @@ a {
   box-sizing: border-box; }
 
 body {
-  background: #efefef;
-  font-family: sans-serif; }
+  background: #FFF;
+  font-family: "Source Code Pro", sans-serif; }

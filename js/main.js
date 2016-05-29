@@ -13,52 +13,38 @@ var calcApp = {
     calcApp.totalReset();
   },
   events: function(){
-    $('#calc-main').on('click', 'span', calcApp.numLog);
+    //events for numbers
+    $("#numbers > a").not("#clear,#clearall").on("click", calcApp.getNumbers);
+    // events for operators
+    $("#operators > a").not("#equals").on("click", calcApp.getOperators)
+    // click function for clearing
+    $("#clear,#clearall").on("click", calcApp.clearFunc);
+    // click function for equals
+    $("#equals").on("click", calcApp.equalFunc);
   },
   totalReset: function(){
-    totaldiv.text("0");
-  }
-};
-
-$(document).ready(function(){
-  //prevents the length of numbers from going outside the div, might remove this.
-	// var testNumLength = function(number) {
-  //       if (number.length > 9) {
-  //           totaldiv.text(number.substr(number.length-9,9));
-  //           if (number.length > 15) {
-  //               number = "";
-  //               totaldiv.text("Err");
-  //           }
-  //       }
-  //   };
-
-
-  //click funciton for numbers
-  $("#numbers > a").not("#clear,#clearall").click(function(){
-		number += $(this).text();
-		totaldiv.text(number);
-		// testNumLength(number);
-  });
-
-  // click function for operators
-  $("#operators > a").not("#equals").click(function(){
+      return totaldiv.text("0");
+  },
+  getNumbers: function(event){
+    event.preventDefault();
+    number += $(this).text();
+    totaldiv.text(number);
+  },
+  getOperators: function(event){
+    event.preventDefault();
 		operator = $(this).text();
 		newnumber = number;
 		number = "";
 		totaldiv.text(operator);
-  });
-
-  // click function for clearing
-  $("#clear,#clearall").click(function(){
+  },
+  clearFunc: function(){
 		number = "";
 		totaldiv.text("0");
 		if ($(this).attr("id") === "clearall") {
 			newnumber = "";
 		}
-  });
-
-  // click function for equals
-  $("#equals").click(function(){
+  },
+  equalFunc: function(){
    if (operator === "+"){
      number = (parseInt(number, 10) + parseInt(newnumber,10)).toString(10);
    } else if (operator === "-"){
@@ -69,9 +55,7 @@ $(document).ready(function(){
      number = (parseInt(newnumber, 10) * parseInt(number,10)).toString(10);
    }
    totaldiv.text(number);
-  //  testNumLength(number);
    number = "";
    newnumber = "";
-   });
-
-});
+   }
+};

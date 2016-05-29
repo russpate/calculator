@@ -16,7 +16,9 @@ a {
       width: 80%; } }
   @media screen and (max-width: 40em) {
     #calculator {
-      width: 98%; } }
+      width: 100%;
+      margin: 0;
+      padding: 0; } }
 
 #total {
   background-color: white;
